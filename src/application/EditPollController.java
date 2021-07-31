@@ -42,7 +42,7 @@ public class EditPollController {
     @FXML
     private TextField pollName;
     
-    private PollList choice = Factory.getInstance().createEmptyPolls();
+    PollList choice = Factory.getInstance().createEmptyPolls();
 
 
     @FXML
@@ -104,5 +104,15 @@ public class EditPollController {
         	if (index>=0) setPartyNames(choice.getPolls()[index]); 
     	});
     }
+
+	public void setPolls(PollList polls) {
+		// TODO Auto-generated method stub
+		polls = choice;
+	}
+
+	public void refresh() {
+		// TODO Auto-generated method stub
+		
+	}
 
 }

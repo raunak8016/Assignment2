@@ -27,7 +27,7 @@ public class PollTrackerApp extends Application {
 			Parent setupView = (Parent) loader.load(new FileInputStream("src/views/SetupView.fxml"));
 			SetupController setupController = loader.getController();
 			setupController.linkWithApplication(this);
-			scene = new Scene(setupView,300,300);
+			scene = new Scene(setupView,700,700);
 			primaryStage.setScene(scene);
 			primaryStage.show();		
 		} catch (FileNotFoundException e) {

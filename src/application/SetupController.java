@@ -44,6 +44,8 @@ public class SetupController {
     
     @FXML
     private ArrayList<TextField> partyNamesField = new ArrayList<TextField>();
+    
+    PollTrackerApp copy;
 
     @FXML
     void resetButtonClicked(ActionEvent event) {
@@ -83,6 +85,12 @@ public class SetupController {
     		partyNames[i] = partyNamesField.get(i).getText();
     	}
     	Factory.getInstance().setPartyNames(partyNames);
+    	copy.pollView();
     }
+
+	public void linkWithApplication(PollTrackerApp pollTrackerApp) {
+		// TODO Auto-generated method stub
+		 copy = pollTrackerApp;
+	}
 }
 
