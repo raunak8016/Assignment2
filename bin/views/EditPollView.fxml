@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane prefHeight="510.0" prefWidth="722.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.EditPollController">
+   <top>
+      <HBox prefHeight="72.0" prefWidth="722.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label prefHeight="42.0" prefWidth="105.0" text="Poll to edit:">
+               <HBox.margin>
+                  <Insets left="250.0" top="15.0" />
+               </HBox.margin>
+            </Label>
+            <ChoiceBox fx:id="pollEditSelect" prefHeight="31.0" prefWidth="101.0">
+               <HBox.margin>
+                  <Insets top="15.0" />
+               </HBox.margin>
+            </ChoiceBox>
+         </children>
+      </HBox>
+   </top>
+   <center>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <TextField fx:id="pollName" prefHeight="39.0" prefWidth="331.0">
+               <VBox.margin>
+                  <Insets left="100.0" right="60.0" top="30.0" />
+               </VBox.margin>
+            </TextField>
+            <Label text="Party to update:">
+               <VBox.margin>
+                  <Insets left="240.0" top="30.0" />
+               </VBox.margin>
+            </Label>
+            <Label prefHeight="27.0" prefWidth="235.0" text="Projected number of seats:">
+               <VBox.margin>
+                  <Insets left="160.0" top="30.0" />
+               </VBox.margin>
+            </Label>
+            <Label text="Projected percentage of the vote:">
+               <VBox.margin>
+                  <Insets left="115.0" top="55.0" />
+               </VBox.margin>
+            </Label>
+         </children>
+      </VBox>
+   </center>
+   <bottom>
+      <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="clearButton" mnemonicParsing="false" onAction="#clearButtonClicked" text="Clear">
+               <HBox.margin>
+                  <Insets left="250.0" top="20.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="updatePartyButton" mnemonicParsing="false" onAction="#updatePartyClicked" prefHeight="39.0" prefWidth="133.0" text="Update Party">
+               <HBox.margin>
+                  <Insets left="20.0" top="20.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+   </bottom>
+   <right>
+      <VBox prefHeight="338.0" prefWidth="284.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="updatePollButton" mnemonicParsing="false" onAction="#updatePollName" prefHeight="39.0" prefWidth="186.0" text="Update Poll Name">
+               <VBox.margin>
+                  <Insets right="50.0" top="30.0" />
+               </VBox.margin>
+            </Button>
+            <ChoiceBox fx:id="partyUpdateSelect" prefWidth="150.0">
+               <VBox.margin>
+                  <Insets top="26.0" />
+               </VBox.margin>
+            </ChoiceBox>
+            <HBox prefHeight="77.0" prefWidth="284.0">
+               <children>
+                  <TextField fx:id="seatNum" />
+                  <Label text="/290">
+                     <HBox.margin>
+                        <Insets left="5.0" top="18.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="11.0" />
+                     </font>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <TextField fx:id="votePercentage" />
+                  <Label text="\%">
+                     <HBox.margin>
+                        <Insets left="5.0" top="20.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </right>
+</BorderPane>

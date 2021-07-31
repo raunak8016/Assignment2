@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane prefHeight="618.0" prefWidth="759.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SetupController">
+   <top>
+      <Label text="Setup Poll Tracker" BorderPane.alignment="CENTER">
+         <font>
+            <Font size="64.0" />
+         </font>
+         <padding>
+            <Insets top="20.0" />
+         </padding>
+         <BorderPane.margin>
+            <Insets bottom="50.0" />
+         </BorderPane.margin>
+      </Label>
+   </top>
+   <bottom>
+      <HBox prefHeight="168.0" prefWidth="759.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="resetButton" mnemonicParsing="false" onAction="#resetButtonClicked" prefHeight="72.0" prefWidth="117.0" text="Reset">
+               <HBox.margin>
+                  <Insets left="35.0" top="35.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Button>
+            <Button fx:id="submitButton" mnemonicParsing="false" onAction="#submitButtonClicked" prefHeight="72.0" prefWidth="115.0" text="Submit">
+               <HBox.margin>
+                  <Insets left="50.0" top="35.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
+   </bottom>
+   <center>
+      <VBox prefHeight="405.0" prefWidth="414.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER_RIGHT" prefHeight="51.0" prefWidth="419.0" text="Number of seats:">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <VBox.margin>
+                  <Insets right="20.0" />
+               </VBox.margin>
+            </Label>
+            <Label alignment="CENTER_RIGHT" prefHeight="35.0" prefWidth="420.0" text="Number of parties:">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <padding>
+                  <Insets top="65.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets right="20.0" />
+               </VBox.margin>
+            </Label>
+            <Label alignment="CENTER_RIGHT" prefHeight="35.0" prefWidth="420.0" text="Number of polls:">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <padding>
+                  <Insets top="68.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets right="20.0" />
+               </VBox.margin>
+            </Label>
+         </children>
+      </VBox>
+   </center>
+   <right>
+      <VBox prefHeight="405.0" prefWidth="318.0" BorderPane.alignment="CENTER">
+         <children>
+            <TextField fx:id="enterSeatNumber" prefHeight="56.0" prefWidth="297.0">
+               <VBox.margin>
+                  <Insets bottom="50.0" right="20.0" />
+               </VBox.margin>
+            </TextField>
+            <TextField fx:id="enterPartyNumber" prefHeight="55.0" prefWidth="299.0">
+               <VBox.margin>
+                  <Insets bottom="50.0" right="20.0" />
+               </VBox.margin>
+            </TextField>
+            <TextField fx:id="enterPollNumber" prefHeight="54.0" prefWidth="258.0">
+               <VBox.margin>
+                  <Insets right="20.0" />
+               </VBox.margin>
+            </TextField>
+         </children>
+      </VBox>
+   </right>
+</BorderPane>
