@@ -23,6 +23,7 @@ public class SetupTester extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		try {
+			//loader code to initiate the scene
 			FXMLLoader loader = new FXMLLoader();
 			BorderPane root = loader.load(new FileInputStream("src/views/SetupView.fxml"));
 			Scene scene = new Scene(root,700,700);
