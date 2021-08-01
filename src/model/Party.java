@@ -52,6 +52,7 @@ public class Party {
 	 */
 	public void setProjectedPercentageOfVotes(float projectedPercentageOfVotes) {
 		if (projectedPercentageOfVotes>=0f && projectedPercentageOfVotes<=1f)this.projectedPercentageOfVotes = projectedPercentageOfVotes;
+		else System.out.println("Error for value entered");
 	}
 
 	/**
@@ -66,6 +67,7 @@ public class Party {
 	 */
 	public void setProjectedNumberOfSeats(float projectedNumberOfSeats) {
 		if (projectedNumberOfSeats>=0f) this.projectedNumberOfSeats = projectedNumberOfSeats;
+		else System.out.println("Error for value entered");
 	}
 
 	/**
