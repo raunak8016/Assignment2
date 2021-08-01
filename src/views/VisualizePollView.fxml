@@ -6,9 +6,9 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.BorderPane?>
 
-<BorderPane fx:id="pollVisualizer" prefHeight="520.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.VisualizePollController">
+<BorderPane fx:id="pollVisualizer" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.VisualizePollController">
    <center>
-      <HBox prefHeight="500" prefWidth="1080" BorderPane.alignment="CENTER">
+      <HBox prefHeight="460.0" prefWidth="800.0" BorderPane.alignment="CENTER">
          <children>
             <PieChart id="projectedSeatsPieChart" fx:id="projectedSeatsPieChart" onMouseClicked="#onSeatChartClick" prefHeight="500.0" prefWidth="540.0" title="Projected Number of Seats" />
             <PieChart id="projectedVotesPieChart" fx:id="projectedVotesPieChart" onMouseClicked="#onVoteChartClick" prefHeight="500.0" prefWidth="540.0" title="Projected Percentage of Votes" />
@@ -16,9 +16,9 @@
       </HBox>
    </center>
    <top>
-      <Pane prefHeight="40.0" prefWidth="1080.0" BorderPane.alignment="CENTER">
+      <Pane prefHeight="40.0" prefWidth="800.0" BorderPane.alignment="CENTER">
          <children>
-            <ChoiceBox fx:id="pollChoices" layoutX="465.0" layoutY="5.0" prefHeight="20.0" prefWidth="150.0" />
+            <ChoiceBox fx:id="pollChoices" layoutX="325.0" layoutY="5.0" prefHeight="20.0" prefWidth="150.0" />
          </children>
       </Pane>
    </top>

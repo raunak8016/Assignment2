@@ -23,9 +23,21 @@ public class VisualizePollController {
 	
 	/**
 	 * @param polls the polls to set
+	 * Sets the instance variable polls to be one more
+	 * than the length of the PollList object specified
+	 * so that room can be fitted for the aggregate poll
+	 * within its polls.
+	 * 
+	 * @param polls the polls to set.
 	 */
 	public void setPolls(PollList polls) {
-		this.polls = polls;
+		this.polls = new PollList(polls.getPolls().length + 1, polls.getNumOfSeats());
+		for (Poll poll : polls.getPolls()) {
+			this.polls.addPoll(poll);
+		}
+		String[] partyNames = Factory.getInstance().getPartyNames();
+		Poll aggregate = polls.getAggregatePoll(partyNames);
+		this.polls.addPoll(aggregate);
 	}
 
     @FXML
@@ -51,7 +63,7 @@ public class VisualizePollController {
      */
     @FXML
     void onSeatChartClick(ActionEvent event) {
-    	
+    	System.out.println(pollChoices.getValue().getPartiesSortedBySeats());
     }
 
     /**
@@ -107,13 +119,16 @@ public class VisualizePollController {
      */
 	@FXML
 	void initialize() {
-		this.polls = Factory.getInstance().createRandomPollList();
+		this.setPolls(Factory.getInstance().createRandomPollList());
+		// Creates the aggregate poll by calling the singleton Factory.
 		String[] partyNames = Factory.getInstance().getPartyNames();
-		Poll aggregate = this.polls.getAggregatePoll(partyNames);
+		Poll aggregate = polls.getAggregatePoll(partyNames);
+
+		// Adds the aggregate poll after calling setter.
+		this.polls.addPoll(aggregate);
 		
 		// Sets the items of the pollsChoice to be the singleton Factory PollList
 		pollChoices.setItems(FXCollections.observableArrayList(this.polls.getPolls()));
-		pollChoices.getItems().add(aggregate);
 		
 		// Sets the initial choice as the aggregate poll, and displays both sets of data
 		pollChoices.setValue(aggregate);

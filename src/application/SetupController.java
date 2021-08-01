@@ -85,7 +85,7 @@ public class SetupController {
 
         VBox r = new VBox();
         r.getChildren().add(partyNamesButton);
-        for (int i = 0; i<Integer.valueOf(enterPartyNumber.getText()); i++) {
+        for (int i = 0; i < Integer.valueOf(enterPartyNumber.getText()); i++) {
         	Label name = new Label("Name of Party");
             r.getChildren().add(name);
             partyNamesField.add(new TextField());
@@ -93,7 +93,7 @@ public class SetupController {
         }
         partyNamesButton.setOnAction(this::partyNamesButtonClicked);
         
-        // create a scene
+        // creates a Scene Instance
         Scene sc = new Scene(r, 400, 400);
 		stage.setScene(sc);
 		stage.show();
@@ -101,14 +101,15 @@ public class SetupController {
     
     /**
      * Gets the pollView of the application, and retrieves
-     * the partyNames within the pollView specified.
+     * the partyNames within the pollView specified, and
+     * then adds them to PollList.
      * 
      * @param event of the submit button being clicked.
      */
     @FXML
     void partyNamesButtonClicked(ActionEvent event) {
        	String[] partyNames = new String[Integer.valueOf(enterPartyNumber.getText())];
-    	for(int i = 0; i<Integer.valueOf(enterPartyNumber.getText()); i++) {
+    	for(int i = 0; i < Integer.valueOf(enterPartyNumber.getText()); i++) {
     		partyNames[i] = partyNamesField.get(i).getText();
     	}
     	// Retrieves the singleton instance of the Factory.
