@@ -16,6 +16,10 @@ import javafx.stage.Stage;
  *
  */
 public class VisualizePollTester extends Application {
+	/**
+	 * Sets the scene for the VisualizePollView.fxml and
+	 * Tests the Poll Visualizer section of the application.
+	 */
 	@Override
 	public void start(Stage primaryStage) {
 		try {

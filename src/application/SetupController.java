@@ -21,7 +21,11 @@ import javafx.stage.Stage;
 import model.Factory;
 
 
-
+/**
+ * 
+ * @author raunak
+ *
+ */
 public class SetupController {
 
     @FXML
@@ -47,6 +51,14 @@ public class SetupController {
     
     PollTrackerApp copy;
 
+    /**
+     * Method to reset data within the SetupController.
+     * Uses the reset button in the GUI being pressed
+     * to know whether the user wants to reset.
+     * 
+     * @param event of the 'reset' button being clicked
+     * as an input.
+     */
     @FXML
     void resetButtonClicked(ActionEvent event) {
     	enterPollNumber.setText("");
@@ -54,6 +66,15 @@ public class SetupController {
     	enterSeatNumber.setText("");
     }
 
+    /**
+     * Method to submit data with the GUI application as
+     * a form. Once a user has finished adding their
+     * needed data, they can submit to ensure their
+     * changes go through.
+     * 
+     * @param event of the 'submit' button within the
+     * fxml form being clicked.
+     */
     @FXML
     void submitButtonClicked(ActionEvent event) {
     	Factory.getInstance().setNumOfSeats(Integer.valueOf(enterSeatNumber.getText()));
@@ -78,16 +99,29 @@ public class SetupController {
 		stage.show();
     }
     
+    /**
+     * Gets the pollView of the application, and retrieves
+     * the partyNames within the pollView specified.
+     * 
+     * @param event of the submit button being clicked.
+     */
     @FXML
     void partyNamesButtonClicked(ActionEvent event) {
        	String[] partyNames = new String[Integer.valueOf(enterPartyNumber.getText())];
     	for(int i = 0; i<Integer.valueOf(enterPartyNumber.getText()); i++) {
     		partyNames[i] = partyNamesField.get(i).getText();
     	}
+    	// Retrieves the singleton instance of the Factory.
     	Factory.getInstance().setPartyNames(partyNames);
     	copy.pollView();
     }
 
+    /**
+     * Links the SetupController with the main application so
+     * functionality can be linked to the GUI.
+     * 
+     * @param pollTrackerApp is the main GUI application class.
+     */
 	public void linkWithApplication(PollTrackerApp pollTrackerApp) {
 		// TODO Auto-generated method stub
 		 copy = pollTrackerApp;

@@ -8,7 +8,18 @@ import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
+/**
+ * 
+ * @author raunak
+ *
+ */
+
 public class EditPollTester extends Application{
+	/**
+	 * Starts the Tester class application for the
+	 * EditPollView.fxml file by loading a new
+	 * scene on the Stage instance
+	 */
 	@Override
 	public void start(Stage primaryStage) {
 		try {

@@ -16,10 +16,20 @@ import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
 import javafx.scene.layout.StackPane;
 
+/**
+ * 
+ * @author raunak
+ *
+ */
+
 public class PollTrackerApp extends Application {
 	Stage primaryStage;
 	PollList polls;
 	
+	/**
+	 * Sets and loads the Scene for the SetupView.fxml and its
+	 * corresonding controller class
+	 */
 	private void setupView() {
 		FXMLLoader loader = new FXMLLoader();
 		Scene scene;
@@ -65,6 +75,11 @@ public class PollTrackerApp extends Application {
 		
 	}
 	
+	/**
+	 * Starts the application by throwing the SetupView and
+	 * its controller to the user entering and/or starting
+	 * the application.
+	 */
 	@Override
 	public void start(Stage primaryStage) {
 		this.primaryStage = primaryStage;
