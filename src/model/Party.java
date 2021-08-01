@@ -16,7 +16,7 @@ public class Party {
 	 * @param partyName the name of the Party instance.
 	 */
 	public Party(String partyName) {
-		name = partyName;
+		name = partyName; //set name
 	}
 	
 	/**

@@ -54,6 +54,7 @@ public class EditPollController {
      */
     @FXML
     void clearButtonClicked(ActionEvent event) {
+    	//set each Textfield to empty
     	seatNum.setText("");
     	votePercentage.setText("");
     	pollName.setText("");
@@ -70,8 +71,13 @@ public class EditPollController {
      */
     @FXML
     void updatePollName(ActionEvent event) {
-    	String name = pollName.getText();
+    	//get text from new poll name
+    	String name = pollName.getText(); 
+    	
+    	//check which poll is being Selected
     	int index = pollEditSelect.getSelectionModel().getSelectedIndex();
+    	
+    	//change the name of the poll if a Poll is currently selected
     	if (index >= 0) {
     		choice.getPolls()[index].setName(name);
         	setPollChoices();
@@ -87,10 +93,15 @@ public class EditPollController {
      */
     @FXML
     void updatePartyClicked(ActionEvent event) {
+    	//get values in the text fields to update the party object
     	int percentage = Integer.parseInt(votePercentage.getText());
     	int numOfSeats = Integer.parseInt(seatNum.getText());
+    	
+    	//get the index of the party and poll currently selected
     	int index0 = pollEditSelect.getSelectionModel().getSelectedIndex();
     	int index1 = partyUpdateSelect.getSelectionModel().getSelectedIndex();
+    	
+    	//update the party based on user input for the specific poll selected
     	if (index0 >= 0 && index1 >= 0 && votePercentage.getText() != null && seatNum.getText() != null) {
     		choice.getPolls()[index0].getParties()[index1].setProjectedNumberOfSeats(numOfSeats);
     		choice.getPolls()[index0].getParties()[index1].setProjectedPercentageOfVotes((float) percentage / 100);
@@ -105,10 +116,12 @@ public class EditPollController {
      * @param userPoll the Poll instance
      */
     public void setPartyNames(Poll userPoll) {
+    	//get the array of names for the Poll selected
     	String[] partyNames = new String[userPoll.getNumberOfParties()];
     	for(int i = 0; i < partyNames.length; i++) {
     		partyNames[i] = userPoll.getParties()[i].toString();
     	}
+    	//set the choices for the Parties available in the poll
     	partyUpdateSelect.setItems(FXCollections.observableArrayList(partyNames));
     }
     
@@ -118,6 +131,7 @@ public class EditPollController {
      */
     @FXML 
     void initialize() { 
+    	//run methods to set the choices for Poll and Party choiceboxes
     	setPollChoices();
     	setPartyChoices();
     }
@@ -129,10 +143,13 @@ public class EditPollController {
      * pollEditSelect.
      */
     public void setPollChoices() {
+    	//set Poll Choices based on created Factory list
     	String[] pollNames = new String[choice.getPolls().length];
     	for(int i = 0; i<pollNames.length; i++) {
     		pollNames[i] = choice.getPolls()[i].getPollName();
     	}
+    	
+    	//set Poll choices in choice box using the string array of Poll names
     	pollEditSelect.setItems(FXCollections.observableArrayList(pollNames));
     }
     
@@ -140,6 +157,7 @@ public class EditPollController {
      * Sets party choices based on user input.
      */
     public void setPartyChoices() {
+    	//set Party choices once a Poll has been selected
     	pollEditSelect.setOnAction((event) -> {
     		int index = pollEditSelect.getSelectionModel().getSelectedIndex();
         	if (index>=0) setPartyNames(choice.getPolls()[index]); 

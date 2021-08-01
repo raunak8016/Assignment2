@@ -49,6 +49,7 @@ public class SetupController {
     @FXML
     private ArrayList<TextField> partyNamesField = new ArrayList<TextField>();
     
+    //instance of PollTracker
     PollTrackerApp copy;
 
     /**
@@ -61,6 +62,7 @@ public class SetupController {
      */
     @FXML
     void resetButtonClicked(ActionEvent event) {
+    	//clears the input of all text fields
     	enterPollNumber.setText("");
     	enterPartyNumber.setText("");
     	enterSeatNumber.setText("");
@@ -77,14 +79,18 @@ public class SetupController {
      */
     @FXML
     void submitButtonClicked(ActionEvent event) {
+    	//sets Number of Seats and Percentage of Votes to user input for a specific instance of Factory
     	Factory.getInstance().setNumOfSeats(Integer.valueOf(enterSeatNumber.getText()));
     	Factory.getInstance().setNumOfPolls(Integer.valueOf(enterPollNumber.getText()));
-
+    	
+    	//create new Stage
 		Stage stage = (Stage) submitButton.getScene().getWindow();
+		//create new Button
 		partyNamesButton = new Button("Submit Party Names");
-
         VBox r = new VBox();
         r.getChildren().add(partyNamesButton);
+        
+        //create the same number of text fields and labels as the user has entered for parties to name
         for (int i = 0; i < Integer.valueOf(enterPartyNumber.getText()); i++) {
         	Label name = new Label("Name of Party");
             r.getChildren().add(name);
@@ -92,7 +98,6 @@ public class SetupController {
             r.getChildren().add(partyNamesField.get(i));
         }
         partyNamesButton.setOnAction(this::partyNamesButtonClicked);
-        
         // creates a Scene Instance
         Scene sc = new Scene(r, 400, 400);
 		stage.setScene(sc);
@@ -100,20 +105,23 @@ public class SetupController {
     }
     
     /**
-     * Gets the pollView of the application, and retrieves
-     * the partyNames within the pollView specified, and
-     * then adds them to PollList.
+     * Gets the name of the parties for each Poll of the application
+     * then adds them to each Poll.
      * 
      * @param event of the submit button being clicked.
      */
     @FXML
-    void partyNamesButtonClicked(ActionEvent event) {
+    void partyNamesButtonClicked(ActionEvent event) 
+    { 
+    	//creates String array of Party names
        	String[] partyNames = new String[Integer.valueOf(enterPartyNumber.getText())];
     	for(int i = 0; i < Integer.valueOf(enterPartyNumber.getText()); i++) {
     		partyNames[i] = partyNamesField.get(i).getText();
     	}
-    	// Retrieves the singleton instance of the Factory.
+    	// Retrieves the singleton instance of the Factory and passes the partyNames array onto it.
     	Factory.getInstance().setPartyNames(partyNames);
+    	
+    	//for PollTrackerApp
     	copy.pollView();
     }
 
@@ -124,7 +132,6 @@ public class SetupController {
      * @param pollTrackerApp is the main GUI application class.
      */
 	public void linkWithApplication(PollTrackerApp pollTrackerApp) {
-		// TODO Auto-generated method stub
 		 copy = pollTrackerApp;
 	}
 }

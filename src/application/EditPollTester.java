@@ -23,6 +23,7 @@ public class EditPollTester extends Application{
 	@Override
 	public void start(Stage primaryStage) {
 		try {
+			//loader code to initiate the scene
 			FXMLLoader loader = new FXMLLoader();
 			BorderPane root = loader.load(new FileInputStream("src/views/EditPollView.fxml"));
 			Scene scene = new Scene(root,700,500);
@@ -33,7 +34,10 @@ public class EditPollTester extends Application{
 			e.printStackTrace();
 		}
 	}
-
+	/**
+	 * launches the EditPollScene
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		launch(args);
 	}

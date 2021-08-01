@@ -29,6 +29,8 @@ public class PollTrackerApp extends Application {
 	/**
 	 * Sets and loads the Scene for the SetupView.fxml and its
 	 * corresonding controller class
+	 * This code is from the skeleton class provided
+	 * so no inline comments have been added.
 	 */
 	private void setupView() {
 		FXMLLoader loader = new FXMLLoader();
@@ -46,7 +48,11 @@ public class PollTrackerApp extends Application {
 			e.printStackTrace();
 		}
 	}
-	
+	/**
+	 * changes the view to EditPollView and PollVisualizationView
+	 * both views are tabs and can be switched
+	 * by clicking each tab
+	 */
 	void pollView() {
 		FXMLLoader loader = new FXMLLoader();
 		Scene scene;
@@ -86,7 +92,10 @@ public class PollTrackerApp extends Application {
 		setupView();
 		
 	}
-	
+	/**
+	 * launches the poll tracker application
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		launch(args);
 	}

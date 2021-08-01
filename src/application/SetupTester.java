@@ -33,7 +33,10 @@ public class SetupTester extends Application {
 			e.printStackTrace();
 		}
 	}
-
+	/**
+	 * launches the SetupView scene
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		launch(args);
 	}
