@@ -9,8 +9,17 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 
-
+/**
+ * 
+ * @author raunak
+ *
+ */
 public class SetupTester extends Application {
+	/**
+	 * Sets the scene and displays the information for
+	 * the SetupView.fxml and corresponding controller
+	 * class file.
+	 */
 	@Override
 	public void start(Stage primaryStage) {
 		try {
