@@ -19,7 +19,7 @@ import model.PollList;
  *
  */
 public class VisualizePollController {
-	PollList polls;
+	private PollList polls;
 	
 	/**
 	 * @param polls the polls to set
